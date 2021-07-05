@@ -1,16 +1,16 @@
 @startuml
 title ER
 entity "マスター" as Master{
-+ id [PK]
++ id:int [PK]
 --
-UserId
+UserId:varchar(32)[FK]
 }
 
 entity "ユーザー" as User{
-+ id[PK]
-+ UserId[FK]
++ id:varchar(32)[PK] - UserId
 --
+name:varchar(255)
 }
 
-Master |o-ri-o{    User
+Master -ri-{    User
 @enduml
